@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06aa5e" />
+    <title>Sign up | Bank Application ™</title>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=<SITE API key>" async defer></script> -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/styles/sign-up.css" />
+  </head>
+  <body>
+    <main class="card-container slideUp-animation">
+      <div class="image-container">
+        <h1 class="company">Bank Application <sup>&trade;</sup></h1>
+        <img src="./assets/images/signUp.svg" class="illustration" alt="" />
+        <p class="quote">Sign up today to get exciting offers..!</p>
+      </div>
+      <form action="" method="" id="form">
+        <div class="form-container slideRight-animation">
+          <h1 class="form-header">Get started</h1>
+
+          <div class="input-container">
+            <label for="first name"></label>
+            <input type="text" name="first name" id="first name" required />
+            <span> First Name </span>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-container">
+            <label for="last name"></label>
+            <input type="text" name="last name" id="last name" required />
+            <span> Last Name </span>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-container">
+            <label for="address"></label>
+            <input type="text" name="address" id="address" required />
+            <span> Address </span>
+            <div class="error"></div>
+         </div>
+         
+         <div class="input-container">
+            <label for="cell phone"></label>
+            <input type="text" name="cell phone" id="cell phone" required />
+            <span> Cell Phone </span>
+            <div class="error"></div>
+         </div>
+         
+         <div class="input-container">
+            <label for="email"></label>
+            <input type="text" name="email" id="email" required />
+            <span> Email </span>
+            <div class="error"></div>
+         </div>
+        
+        <div class="input-container">
+            <label for="dob"></label>
+            <input type="text" name="dob" id="dob" required />
+            <span> Date of Birth </span>
+            <div class="error"></div>
+         </div>
+
+         <label for="account types">Choose the account you want to apply for:</label> 
+    <select name="account types" id="account types"> 
+        <option value="Checkings Account">Checking Account</option>
+        <option value="Credit Card">Credit Card</option>  
+        <option value="CD">CD</option> 
+    </select>
+
+          <div id="btm">
+            <!-- <button class="g-recaptcha" 
+              data-sitekey="reCAPTCHA_site_key" 
+              data-callback='onSubmit' 
+              data-action='submit'>Create Account</button> -->
+            <button type="submit" class="submit-btn">Apply</button>
+            <p class="btm-text">
+              Already have an account..?
+              <span class="btm-text-highlighted"> Log in</span>
+            </p>
+          </div>
+        </div>
+      </form>
+    </main>
+    <!-- <script src="../src/components/application.js"></script> -->
+  </body>
+</html>

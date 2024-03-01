@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/schedule_meeting.css">
+    <title>Schedule A Meeting</title>
+    <script src="../src/components/schedule_meeting.js"></script>
+</head>
+<body>
+    <form id="meetingForm">
+        <label for="meetingTitle">Meeting Title:</label>
+        <input type="text" id="meetingTitle" required><br>
+    
+        <label for="meetingDate">Meeting Date:</label>
+        <input type="date" id="meetingDate" required><br>
+    
+        <label for="meetingTime">Meeting Time:</label>
+        <input type="time" id="meetingTime" required><br>
+    
+        <button type="button" onclick="scheduleMeeting()">Schedule Meeting</button>
+    </form>
+
+</body>
+</html>

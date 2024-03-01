@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Tellers</title>
+    <link rel="stylesheet" href="../src/styles/create_teller.css" id="css">
+    <script>
+      function goToDashboard() {
+          window.location.href = "/admin_dashboard.html";
+      }
+    </script>
+</head>
+<body>
+    <br><h1>Existing Tellers</h1><br>
+    
+    <table id="tellerTable" border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tellerTableBody">
+            <!-- Table rows will be added dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <h2>Create a New Teller</h2>
+
+    <form id="createTellerForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br><br>
+
+        <label for="userName">Username:</label>
+        <input type="text" id="userName" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <label for="confPassword">Confirm Password:</label>
+        <input type="password" id="confPassword" required>
+        <div class="error" id="confirmError"></div><br><br>
+
+        <button type="button" onclick="addTeller()">Add Teller</button>
+    </form><br><br>
+
+    <div>
+      <button type="button" onclick="goToDashboard()">Back to Dashboard</button>
+  </div>
+
+    <script src="create_teller.js"></script>
+</body>
+</html>

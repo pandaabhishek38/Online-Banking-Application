@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06aa5e" />
+    <title>Login | Bank Application ™</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/styles/sign-up.css" />
+  </head>
+  <body>
+    <main class="card-container slideUp-animation">
+      <div class="image-container">
+        <h1 class="company">Bank Application<sup>&trade;</sup></h1>
+        <img src="./assets/images/signUp.svg" class="illustration" alt="" />
+        <p class="quote">Login to access our world class customer portal</p>
+      </div>
+      <form action="" method="" id="form">
+        <div class="form-container slideRight-animation">
+          <h1 class="form-header">Login</h1>
+
+          <div class="input-container">
+            <label for="u-name"></label>
+            <input type="text" name="u-name" id="u-name" required />
+            <span> User Name </span>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-container">
+            <label for="u-name"></label>
+          </div>
+
+          <div class="input-container">
+            <label for="user-password"></label>
+            <input
+              type="password"
+              name="user-password"
+              id="user-password"
+              class="user-password"
+              required
+            />
+            <span>Password</span>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-container">
+            <label for="user-password-confirm"></label>
+            <input
+              type="password"
+              name="user-password-confirm"
+              id="user-password-confirm"
+              class="password-confirmation"
+              required
+            />
+            <span> Confirm Password </span>
+            <div class="error" id="confirmError"></div>
+          </div>
+
+          <div class="input-container">
+            <button type="button" id="google-login" class="google-login-btn">
+              Login with Google
+            </button>
+          </div>
+
+          <div id="btm">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="../src/components/login.js"></script>
+    <script>
+      document.getElementById('google-login').addEventListener('click', () => {
+        // Redirect to the Google OAuth endpoint for login
+        window.location.href = '/api/google-login';
+      });
+    </script>
+  </body>
+</html>

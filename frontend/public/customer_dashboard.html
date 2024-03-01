@@ -1,0 +1,62 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Account Activity</title>
+      <link rel="stylesheet" href="../src/styles/customer_dashboard.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+      <script src="../src/components/customer_dashboard.js"></script>
+    </head>
+    <body>
+      <div class="container">
+   
+        <section class="main">
+          <div class="main-top">
+            <h1>Account Activity</h1>
+          </div>
+          
+          <section class="act">
+            <div class="accountActivity">
+              <label for="accountDropdown">Select an account:</label>
+              <select id="accountDropdown"></select>
+              <p>Account Balance in the selected account: <span id="account_balance"></span></p>
+              <div class="error" style="display: none;">
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Transaction Amount</th>
+                    <th>Account Number From</th>
+                    <th>Account Number To</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+              
+            </div>
+          </section>
+  
+          <button id="credit_card_payment">Make a Credit Card Payment</button>
+          <button id="bank_statement">Bank Statements</button>
+          <button id="debit_card" >New Debit Card Request</button>
+          <button id="schedule_meeting">Schedule Meeting</button>
+          <button id="interest_rate">Interest Rate</button>
+
+          <button id="report_debit_card">Report Debit Card</button>
+          <button id="explore_products">Explore Products</button>
+
+          <!--<button id="modify_products">Modify Products</button>-->
+          <button id="funds_transfer">Funds Transfer</button>
+          <button id="overdraft">overdraft</button>
+
+        </section>
+      </div>
+
+    </body>
+    </html>
+    </span>
+  

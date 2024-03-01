@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/card_payment.css">
+    <title>Credit Card Payment</title>
+    <script src="../src/components/card_payment.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Payment</h1>
+        <form id="payment_form">
+            <label for="account_from">Select Account From:</label>
+            <select id="account_from" name="account_from" onchange="account_from_drop_down_closed"></select>
+
+            <label for="account_to">Select Credit Card Account:</label>
+            <select id="account_to" name="account_to" onchange="account_to_drop_down_closed"></select>
+
+            <p>Account Balance in the sending account: <span id="account_balance_from"></span></p>
+            <p>Payment due in the credit card account: <span id="account_balance_to"></span></p>
+
+            <label for="payment_amount">Payment Amount:</label>
+            <input type="number" id="payment_amount" name="payment_amount" placeholder="Enter amount" required>
+            
+            <button type="button" onclick="submit_payment()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

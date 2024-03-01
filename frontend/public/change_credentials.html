@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06aa5e" />
+    <title>Sign up | Bank Application ™</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=<SITE API key>" async defer></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/styles/sign-up.css" />
+  </head>
+  <body>
+    <main class="card-container slideUp-animation">
+      <div class="image-container">
+        <h1 class="company">Bank Application <sup>&trade;</sup></h1>
+        <img src="./assets/images/signUp.svg" class="illustration" alt="" />
+        <p class="quote">Sign up today to get exciting offers..!</p>
+      </div>
+      <form action="" method="" id="form">
+        <div class="form-container slideRight-animation">
+          <h1 class="form-header">Get started</h1>
+
+         
+         <div class="input-container">
+            <label for="email"></label>
+            <input type="text" name="email" id="email" required />
+            <span> Email </span>
+            <div class="error"></div>
+         </div>
+        
+         <div class="input-container">
+            <label for="new password"></label>
+            <input
+              type="password"
+              name="new password"
+              id="new password"
+              class="new password"
+              required
+            />
+            <span>New Password</span>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-container">
+            <label for="new password confirm"></label>
+            <input
+              type="password"
+              name="new password confirm"
+              id="new password confirm"
+              class="new password confirm"
+              required
+            />
+            <span>New Password Confirm</span>
+            <div class="error"></div>
+          </div>
+
+          <div id="btm">
+            <!-- <button class="g-recaptcha" 
+              data-sitekey="reCAPTCHA_site_key" 
+              data-callback='onSubmit' 
+              data-action='submit'>Create Account</button> -->
+            <button type="submit" class="submit-btn">Update Password</button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <!-- <script src="../src/components/sign-up.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Tellers</title>
+    <link rel="stylesheet" href="../src/styles/overdraft.css" id="css">
+    <script>
+      function goToDashboard() {
+          window.location.href = "/customer_dashboard.html";
+      }
+    </script>
+    <style>
+      .back-to-dashboard-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+      }
+    </style
+    </style>
+</head>
+<body>
+    <br><h1>Your Accounts</h1><br>
+    
+    <table id="overdraftTable" border="1">
+        <thead>
+            <tr>
+                <th>Account Number</th>
+                <th>Current Balance</th>
+                <th>Overdraft Enabled</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="overdraftTableBody">
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <div style="margin-left: 20px;">
+      <!-- <button style="padding: 10px 20px;font-size: 16px;cursor: pointer;background-color: #4CAF50;color: #fff;border: none;border-radius: 4px; float:left;" type="button" onclick="goToDashboard()">Back to Dashboard</button> -->
+      <button class="back-to-dashboard-button" type="button" onclick="goToDashboard()">Back to Dashboard</button>
+    </div>
+
+
+    <script src="overdraft.js"></script>
+</body>
+</html>

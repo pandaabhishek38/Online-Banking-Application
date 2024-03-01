@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Locate Branch</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="../src/styles/locate_branch.css" id="css" />
+    </head>
+    <body>
+        <div class="container">
+            <label for="enter_text">Please enter zip-code:</label>
+            <input type="text" id="zip_code" placeholder="Please enter zip-code">
+            <button id="submit_zip">Submit</button>
+        </div>
+        <div id="map"></div>
+        <script src="../src/components/locate_branch.js"></script>
+    </body>
+</html>
