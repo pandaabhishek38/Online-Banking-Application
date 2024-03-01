@@ -1,0 +1,160 @@
+/* policy_rates.css */
+
+body {
+    background-color: #1e2b39;
+    color: #fff;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.header {
+    background-color: #007bff;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0px 5px 5px -5px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    color: #fff;
+    margin: 0;
+    padding-left: 20px; /* Add padding to the left */
+    font-size: 24px; /* Adjusted font size */
+}
+
+#policyRatesTable {
+    margin-top: 80px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: none;
+}
+
+th {
+    background-color: #37474f;
+    color: #fff;
+}
+
+tr {
+    background-color: #455a64;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+tr:hover {
+    background-color: #546e7a;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.update-button {
+    background-color: #ffd600;
+    color: #000;
+}
+
+button.delete-button {
+    background-color: #e53935;
+    color: #fff;
+}
+
+button.insertButton {
+    background-color: #43a047;
+    color: #fff;
+}
+
+#insertButton {
+    background-color: #43a047;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    right: 20px;
+    bottom: 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#insertButton:hover {
+    background-color: #2e7d32;
+}
+
+#insertButton::after {
+    content: "+";
+    font-size: 24px;
+}
+
+/* Add transition for button hover effect */
+button:hover {
+    filter: brightness(1.2);
+}
+
+.insert-row input {
+
+    width: calc(100% - 16px);
+    margin: 4px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insert-row input:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+.insert-row button.save-button {
+    background-color: #4CAF50;
+    color: #fff;
+    margin-right: 8px;
+}
+
+.insert-row button.cancel-button {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.insert-row button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Add hover effect to table rows */
+table tr:hover {
+    background-color: #263238;
+    color: #fff;
+}
+
+/* Add transition for button hover effect */
+button:hover {
+    filter: brightness(1.2);
+}

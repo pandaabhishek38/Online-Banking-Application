@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+label, select, button {
+    margin-bottom: 10px;
+    display: block;
+}
+
+select, input {
+    width: 45%;
+}
+
+button {
+    padding: 10px;
+    /* background-color: #4CAF50; */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    /*background-color: #45a049;*/
+    background-color: #1e2b39;
+}
+
+.container label,
+.container select,
+.container input {
+    display: inline-block;
+    margin-bottom: 10px; /* Optional: Add some space between label and input */
+}
