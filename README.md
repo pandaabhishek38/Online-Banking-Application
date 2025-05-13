@@ -56,3 +56,25 @@ A full-stack, secure, event-driven online banking platform built as part of a so
 | **Google reCAPTCHA**  | Prevent bot signups and brute-force attacks           |
 | **Mapbox + Nominatim**| Geolocation and interactive branch/ATM maps           |
 
+## Testing & Validation
+- **Unit testing** conducted via Jasmine on key transaction workflows
+- **Stress testing** and concurrent usage validation with Postman
+- Edge-case handling for overdrafts, duplicate submissions, and revocation limits
+
+## Business Logic Highlights
+- CD early withdrawal incurs configurable penalties
+- Admin-controlled policy changes reflected across dashboards
+- Transactions blocked below minimum balance thresholds
+- Out-of-network ATM usage incurs tiered fees (set by admin)
+
+## How to Run Locally
+
+This project requires configuration of private services (e.g., MySQL, Twilio, SMTP, JWT) through environment variables, which are not publicly provided.
+
+If you're interested in running or extending the system, you'll need to:
+- Set up a local MySQL database based on the schema structure outlined above
+- Configure `.env` with your own secrets (DB credentials, JWT secret, email/SMS API keys)
+- Install dependencies with `npm install`
+- Start the server with `npm start`
+
+**Note:** This project was developed and tested in an academic environment. Full setup details, including credentials and external API keys, are not included in this repository
