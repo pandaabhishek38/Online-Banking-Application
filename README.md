@@ -28,3 +28,31 @@ A full-stack, secure, event-driven online banking platform built as part of a so
 - JWT-based session management with bcrypt-salted passwords
 - Google reCAPTCHA for bot protection on login/signup
 - Automatic logout on inactivity
+
+## System Architecture
+- **Modular RESTful API design** using Express routers and middleware
+- **Service layers** for validation, authentication, authorization, and transactions
+- **Middleware security** for route protection based on user roles
+- **Event-driven integrations** for SMS, email, and OTP-free notifications
+
+## Database Schema (MySQL)
+- **Customer** – Stores user profile info
+- **Credentials** – Manages login info per role
+- **Accounts** – Multiple accounts per customer
+- **Transactions** – Tracks all transaction details
+- **Cards** – Includes both debit and credit card metadata
+- **Bank_Representative** – Teller and admin details
+- **Business_Policies** – Descriptions of bank rules
+- **Policy_Rates** – Interest rates and thresholds
+- **Meeting_Schedule** – For scheduling appointments
+
+## Third-Party Integrations
+
+| Service               | Purpose                                               |
+|-----------------------|-------------------------------------------------------|
+| **Twilio**            | SMS alerts for transactions, card statuses, and statements |
+| **SMTP (Elastic Email)** | Transactional email alerts                          |
+| **Google OAuth2**     | OAuth login for secure session management             |
+| **Google reCAPTCHA**  | Prevent bot signups and brute-force attacks           |
+| **Mapbox + Nominatim**| Geolocation and interactive branch/ATM maps           |
+
