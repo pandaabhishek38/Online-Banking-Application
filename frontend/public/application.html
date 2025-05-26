@@ -27,57 +27,59 @@
 
           <div class="input-container">
             <label for="first name"></label>
-            <input type="text" name="first name" id="first name" required />
+            <input name="First_Name" id="first_name" required />
             <span> First Name </span>
             <div class="error"></div>
           </div>
 
           <div class="input-container">
             <label for="last name"></label>
-            <input type="text" name="last name" id="last name" required />
+            <input name="Last_Name" id="last_name" required />
             <span> Last Name </span>
             <div class="error"></div>
           </div>
 
           <div class="input-container">
             <label for="address"></label>
-            <input type="text" name="address" id="address" required />
+            <input name="Address" id="address" required />
             <span> Address </span>
             <div class="error"></div>
-         </div>
-         
-         <div class="input-container">
+          </div>
+
+          <div class="input-container">
             <label for="cell phone"></label>
-            <input type="text" name="cell phone" id="cell phone" required />
+            <input name="Cell_Phone" id="cell_phone" required />
             <span> Cell Phone </span>
             <div class="error"></div>
-         </div>
-         
-         <div class="input-container">
+          </div>
+
+          <div class="input-container">
             <label for="email"></label>
-            <input type="text" name="email" id="email" required />
+            <input name="Email" id="email" required />
             <span> Email </span>
             <div class="error"></div>
-         </div>
-        
-        <div class="input-container">
+          </div>
+
+          <div class="input-container">
             <label for="dob"></label>
-            <input type="text" name="dob" id="dob" required />
+            <input type="date" name="DOB" id="dob" required />
             <span> Date of Birth </span>
             <div class="error"></div>
-         </div>
+          </div>
 
-         <label for="account types">Choose the account you want to apply for:</label> 
-    <select name="account types" id="account types"> 
-        <option value="Checkings Account">Checking Account</option>
-        <option value="Credit Card">Credit Card</option>  
-        <option value="CD">CD</option> 
-    </select>
+          <label for="account types"
+            >Choose the account you want to apply for:</label
+          >
+          <select name="Account_Type" id="account_type">
+            <option value="1">Checking Account</option>
+            <option value="2">Credit Card</option>
+            <option value="3">CD</option>
+          </select>
 
           <div id="btm">
-            <!-- <button class="g-recaptcha" 
-              data-sitekey="reCAPTCHA_site_key" 
-              data-callback='onSubmit' 
+            <!-- <button class="g-recaptcha"
+              data-sitekey="reCAPTCHA_site_key"
+              data-callback='onSubmit'
               data-action='submit'>Create Account</button> -->
             <button type="submit" class="submit-btn">Apply</button>
             <p class="btm-text">
@@ -88,6 +90,6 @@
         </div>
       </form>
     </main>
-    <!-- <script src="../src/components/application.js"></script> -->
+    <script src="../src/components/application.js"></script>
   </body>
 </html>

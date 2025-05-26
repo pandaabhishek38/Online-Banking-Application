@@ -1,37 +1,28 @@
-const nodemailer=require('nodemailer');
+const nodemailer = require("nodemailer");
 
-const sendEmail=async(to,subject,text,html)=>{
-    const transporter=nodemailer.createTransport({
-        host:'smtp.elasticemail.com',
-        port:2525,
-        secure:false,
-        auth:{
-            user:'BankingApp.SE567@proton.me',
-            pass:process.env.EMAIL_PASS
-        }
-    });
+const sendEmail = async (to, subject, text, html) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail", // ✅ Use Gmail here
+    auth: {
+      user: "pandaabhishek34@gmail.com", // ✅ Your Gmail address
+      pass: process.env.EMAIL_PASS, // ✅ Your App Password from .env
+    },
+  });
 
-    const mailOptions={
-        from:'BankingApp.SE567@proton.me',
-        to,
-        subject,
-        text,
-        html
-    };
+  const mailOptions = {
+    from: "pandaabhishek34@gmail.com",
+    to,
+    subject,
+    text,
+    html,
+  };
 
-    try{
-        const info=await transporter.sendMail(mailOptions);
-        console.log('Email sent:',info.response);
-        return;
-    }catch(error){
-        console.error('Email sending failed:',error);
-    }
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
+  } catch (error) {
+    console.error("Email sending failed:", error);
+  }
 };
-module.exports=sendEmail;
 
-
-// sendEmail(
-//     'tanyasharma2614@gmail.com',
-//     'Test',
-//     'This is a test email'
-// );
+module.exports = sendEmail;

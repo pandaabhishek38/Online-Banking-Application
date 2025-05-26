@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment files
+backend/.env
+
+# OS-related files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Build artifacts (if any)
+dist/
+build/
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
+
+# Misc
+.env
+*.env

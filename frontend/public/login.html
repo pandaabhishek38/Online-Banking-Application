@@ -68,16 +68,26 @@
           </div>
 
           <div id="btm">
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">Log In</button>
+            <p class="btm-text">
+              Don't have an account?
+              <a href="sign-up.html" class="btm-text-highlighted"> Sign up </a>
+            </p>
+            <p class="btm-text">
+              Forgot your credentials?
+              <span id="forgot-link" class="btm-text-highlighted"
+                >Click here</span
+              >
+            </p>
           </div>
         </div>
       </form>
     </main>
     <script src="../src/components/login.js"></script>
     <script>
-      document.getElementById('google-login').addEventListener('click', () => {
+      document.getElementById("google-login").addEventListener("click", () => {
         // Redirect to the Google OAuth endpoint for login
-        window.location.href = '/api/google-login';
+        window.location.href = "/api/google-login";
       });
     </script>
   </body>

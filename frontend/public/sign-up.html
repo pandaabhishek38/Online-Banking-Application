@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#06aa5e" />
     <title>Sign up | Bank Application ™</title>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lf-Su4oAAAAAL_SrlFA1cihwExxhosUveLAfIuZ" async defer></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=6Lf-Su4oAAAAAL_SrlFA1cihwExxhosUveLAfIuZ"
+      async
+      defer
+    ></script>
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.png"
@@ -24,6 +28,13 @@
       <form action="" method="" id="form">
         <div class="form-container slideRight-animation">
           <h1 class="form-header">Get started</h1>
+
+          <div class="input-container">
+            <label for="email"></label>
+            <input type="email" name="email" id="email" required />
+            <span>Email Address</span>
+            <div class="error"></div>
+          </div>
 
           <div class="input-container">
             <label for="u-name"></label>
@@ -59,14 +70,14 @@
           </div>
 
           <div id="btm">
-            <!-- <button class="g-recaptcha" 
-              data-sitekey="reCAPTCHA_site_key" 
-              data-callback='onSubmit' 
+            <!-- <button class="g-recaptcha"
+              data-sitekey="reCAPTCHA_site_key"
+              data-callback='onSubmit'
               data-action='submit'>Create Account</button> -->
             <button type="submit" class="submit-btn">Create Account</button>
             <p class="btm-text">
               Already have an account..?
-              <span class="btm-text-highlighted"> Log in</span>
+              <a href="/login.html" class="btm-text-highlighted">Log in</a>
             </p>
           </div>
         </div>
