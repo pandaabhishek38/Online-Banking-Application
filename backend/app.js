@@ -57,7 +57,7 @@ const server = http.createServer((req, res) => {
     handleAPIRequest(req, res);
   } else {
     const urlArray = req.url.split("/");
-    const fileName = urlArray[urlArray.length - 1];
+    const fileName = urlArray[urlArray.length - 1].split("?")[0];
     const fileExtension = path.extname(fileName);
     const filePath = getFilePath(fileName);
 
@@ -158,6 +158,8 @@ const getFilePath = (fileName) => {
     "application.js": "../frontend/src/components/application.js",
     "forgot_credentials.html": "../frontend/public/forgot_credentials.html",
     "forgot_credentials.js": "../frontend/src/components/forgot_credentials.js",
+    "reset-password.html": "../frontend/public/reset-password.html",
+    "reset-password.js": "../frontend/src/components/reset-password.js",
   };
   return filePaths[fileName] ? path.join(__dirname, filePaths[fileName]) : null;
 };

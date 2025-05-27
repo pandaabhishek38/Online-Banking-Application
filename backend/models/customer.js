@@ -230,6 +230,8 @@ const Customer = {
     );
   },
   changeCredentials: function (email, newPassword, callback) {
+    console.log("Inside model → Updating password for email:", email);
+
     // First, check if the email exists in the Customer table
     const checkEmailQuery = "SELECT Customer_Id FROM Customer WHERE email = ?";
     db.query(checkEmailQuery, [email], (error, results) => {
@@ -241,7 +243,7 @@ const Customer = {
           // The email exists in the Customer table, so you can proceed with the update
           const Customer_Id = results[0].Customer_Id;
           const updatePasswordQuery =
-            "UPDATE Credentials SET password = ? WHERE Customer_Id = ?";
+            "UPDATE Credentials SET Password = ? WHERE Customer_Id = ?";
           db.query(
             updatePasswordQuery,
             [newPassword, Customer_Id],

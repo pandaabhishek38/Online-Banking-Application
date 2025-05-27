@@ -32,6 +32,10 @@ function handleAPIRequest(req, res) {
       case "forgot-credentials":
         customerController.forgot_credentials(req, res);
         break;
+      case "reset-password":
+        customerController.reset_password(req, res);
+        break;
+
       case "application":
         customerController.application(req, res);
         break;

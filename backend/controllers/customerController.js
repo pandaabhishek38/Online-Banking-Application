@@ -6,11 +6,22 @@ const sendEmail = require("../config/email");
 const { send_map_request } = require("./locate_branch_controller");
 const { oauth2client, SCOPES } = require("../config/oauth");
 const { google } = require("googleapis");
+const { generateResetToken, verifyResetToken } = require("../utils/tokenUtils");
 
 const sendForgotEmail = async (to, username) => {
-  const subject = "Your Username - Online Banking App";
-  const text = `Hello,\n\nYou requested your username.\n\nUsername: ${username}\n\nThank you for using our service.`;
-  const html = `<p>Hello,</p><p>Your username is: <strong>${username}</strong></p><p>Thank you for using our service.</p>`;
+  const token = generateResetToken(to); // using the email here
+  const resetLink = `http://localhost:8080/reset-password.html?token=${token}`;
+
+  const subject = "Your Username & Password Reset - Online Banking App";
+  const text = `Hello,\n\nYou requested your username.\n\nUsername: ${username}\n\nTo reset your password, click the following link:\n${resetLink}\n\nThis link is valid for 10 minutes.\n\nThank you for using our service.`;
+  const html = `
+    <p>Hello,</p>
+    <p>Your username is: <strong>${username}</strong></p>
+    <p>To reset your password, click the link below:</p>
+    <p><a href="${resetLink}">${resetLink}</a></p>
+    <p><small>This link will expire in 10 minutes.</small></p>
+    <p>Thank you for using our service.</p>
+  `;
 
   await sendEmail(to, subject, text, html);
 };
@@ -276,6 +287,65 @@ const customerController = {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ success: true, message: "Email sent" }));
       });
+    });
+  },
+
+  reset_password: async function (req, res) {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+
+    req.on("end", async () => {
+      try {
+        const { token, newPassword } = JSON.parse(body);
+        console.log("Received token:", token);
+        console.log("New password:", newPassword);
+
+        const payload = verifyResetToken(token);
+        console.log("Decoded payload:", payload);
+
+        if (!payload || !payload.email) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          return res.end(JSON.stringify({ error: "Invalid or expired token" }));
+        }
+
+        const email = payload.email;
+        console.log("Extracted email from token:", email);
+
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        Customer.changeCredentials(email, hashedPassword, (err, result) => {
+          console.log(
+            "changeCredentials callback - Error:",
+            err,
+            "Result:",
+            result
+          );
+
+          if (err) {
+            console.error("Error in changeCredentials:", err);
+            res.writeHead(500, { "Content-Type": "application/json" });
+            return res.end(
+              JSON.stringify({ error: "Failed to update password" })
+            );
+          }
+
+          if (result === "Email not found") {
+            console.log("Email not found in DB.");
+            res.writeHead(404, { "Content-Type": "application/json" });
+            return res.end(JSON.stringify({ error: "Email not registered" }));
+          }
+
+          console.log("Password updated successfully.");
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ message: "Password reset successfully" }));
+        });
+      } catch (err) {
+        console.error("Reset Password Error:", err);
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "Invalid request format" }));
+      }
     });
   },
 
